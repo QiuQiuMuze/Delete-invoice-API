@@ -4,7 +4,6 @@ import datetime
 
 app = Flask(__name__)
 
-# 模拟发票数据库（字典）
 invoices = {
     "123": "Invoice A",
     "456": "Invoice B",
@@ -31,7 +30,6 @@ def delete_invoice():
         message = "Invoice not found."
         success = False
 
-    # 写入日志文件
     with open("deletion_log.json", "a") as f:
         f.write(json.dumps(log_entry) + "\n")
 
